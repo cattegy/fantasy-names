@@ -4,26 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Fantasy Name Generator</title>
 	<style>
-		html {
-			height:   100%;
-		}
-		body {
-			width:    575px;
-			margin:   0 auto;
-			position: relative;
-		}
-		select {
-			height:   1.65em;
-		}
-		.nametype {
-			flex-grow: 1;
-		}
-		.namelist {
-			display:  none;
-		}
-		#output:not([data-generator^="descriptions$"]) {
-			text-transform: capitalize;
-		}
+		html {height: 100%}
+		body {width: 575px; margin: 0 auto; position: relative; font-family: sans-serif}
+		select {height: 1.65em}
+		.nametype {flex-grow: 1}
+		.namelist {display: none}
+		#output:not([data-generator^="descriptions$"]) {text-transform: capitalize}
 	</style>
 </head>
 <body>
@@ -1061,10 +1047,6 @@
 					<option value="insects">Insects</option>
 					<option value="reptiles">Reptiles</option>
 					<option value="wow_pets">Wow Pets</option>
-				</select>
-				<select id="gender">
-					<option value="female">Female</option>
-					<option value="male">Male</option>
 				</select>
 				<input type="number" id="quantity" min="0" max="1000" value="10" />
 				<input type="submit" value="Generate" />

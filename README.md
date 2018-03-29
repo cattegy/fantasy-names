@@ -1,4 +1,4 @@
-fantasy-names
+fantasy-names v2.0.0
 ===
 
 A fantasy name and description generator.
@@ -7,12 +7,10 @@ A fantasy name and description generator.
 
     npm install fantasy-names [-g]
 
-    fantasy-names diablo demons 10 0
+    fantasy-names diablo demons 10
 
-    echo -e "var names = require('fantasy-names');\nconsole.log(names('diablo', 'demons', 10, 0));" > names.js
+    echo "console.log(require('fantasy-names')('diablo', 'demons', 10));" > names.js
     node names.js
-
-Typically type 0=female, and 1=male. You can supply a string seed as the fith argument.
 
 ## Full List
 
