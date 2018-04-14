@@ -1,7 +1,7 @@
 fantasy-names v2.0.0
 ===
 
-A fantasy name and description generator.
+A fantasy name and description generator. Java port: [mp-pinheiro/fantasynamesjava](https://github.com/mp-pinheiro/fantasynamesjava)
 
 ## Usage
 
