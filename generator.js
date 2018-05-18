@@ -45,7 +45,8 @@ const generators = {
 	"world_of_warcraft_pets": ["bat_dragonhawks","birds","boars_bears","cats","crabs","dino_rhinos","dog_wolfs","goat_porcupines","gorilla_monkeys","insects","reptiles","wow_pets"]
 };
 
-module.exports = function(group, individual, quantity) {
+module.exports = function(group, individual, quantity, type) {
+
 	// Randomise inputs
 	if(typeof group === 'undefined') group = Object.keys(generators)[Math.floor(Math.random() * Object.keys(generators).length)];
 	group = group.toLowerCase().replace(" ", "_");
@@ -54,6 +55,7 @@ module.exports = function(group, individual, quantity) {
 	individual = individual.toLowerCase().replace(" ", "_");
 	if(!generators[group].includes(individual)) throw "Invalid individual: " + group + "/" + individual + "!";
 	if(typeof quantity === 'undefined') quantity = 1;
+	if(typeof type === 'undefined') type = Math.random() > 0.5 ? 0 : 1;
 	
 	// Generate names
 	try {
@@ -68,7 +70,7 @@ module.exports = function(group, individual, quantity) {
 		}
 		
 		var output = [];
-		for(var q = 0; q < quantity; q++) output.push(generator(Math.random() > 0.5 ? 0 : 1));
+		for(var q = 0; q < quantity; q++) output.push(generator(type));
 		return output;
 	} catch(e) {throw "Couldn't load: generator$"+group+"$"+individual;}
 }
