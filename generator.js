@@ -1,6 +1,7 @@
 // Dependencies
 const fs = require('fs');
 const path = require('path');
+const testSwear = require('./scripts/swearCheck.js');
 
 const generators = {
 	"armour": ["belts","boots","chests","cloaks","gauntlets","helmets","legs","pauldrons","shields","vambraces"],
@@ -70,7 +71,13 @@ module.exports = function(group, individual, quantity, type) {
 		}
 		
 		var output = [];
-		for(var q = 0; q < quantity; q++) output.push(generator(type));
+		var result = "";
+		for(var q = 0; q < quantity; q++){
+			do{
+				result = testSwear(generator(type))
+			}while(result === "");
+			output.push(result);
+		}
 		return output;
 	} catch(e) {throw "Couldn't load: generator$"+group+"$"+individual;}
 }
