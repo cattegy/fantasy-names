@@ -81,3 +81,5 @@ module.exports = function(group, individual, quantity, type) {
 		return output;
 	} catch(e) {throw "Couldn't load: generator$"+group+"$"+individual;}
 }
+
+module.exports.generators = generators;
